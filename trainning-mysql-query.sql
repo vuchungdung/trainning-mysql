@@ -1,6 +1,7 @@
 use trainning;
 -- Viết lệnh sql để tạo dữ liệu cho các bảng
 
+-- categories
 insert into 
 	categories(categories.category_name,categories.created_at,categories.updated_at) 
 values 
@@ -8,6 +9,7 @@ values
     ("categories_2",current_date(),current_date()),
     ("categories_3",current_date(),current_date());
 
+-- companies
 insert into 
 	companies(companies.company_name,companies.company_code,companies.created_at,companies.updated_at) 
 values 
@@ -16,6 +18,7 @@ values
     ("companies_1","companies_1",current_date(),current_date()),
     ("monstar-lab","companies_1",current_date(),current_date());
 
+-- projects
 insert into 
 	projects(projects.project_name,projects.projected_spend,projects.projected_variance,
 	projects.revenue_recognised,projects.category_id,projects.company_id,projects.created_at,projects.updated_at)
@@ -31,6 +34,7 @@ values
     ("project_9",10,10,10,3,3,current_date(),current_date()),
     ("project_10",200,10,10,3,3,current_date(),current_date());
  
+ -- users
 insert into 
 	users(users.username,users.password,users.email,users.image_url,users.birthday,users.is_active,
 	users.created_at,users.updated_at)
@@ -41,6 +45,7 @@ values
     ("username_4","password_4","email4@gmail.com","image4.png",date("2000-12-21"),true,current_date(),current_date()),
     ("username_5","password_5","email5@gmail.com","image5.png",date("2000-12-21"),true,current_date(),current_date());
 
+-- project_users
 insert into 
 	project_users(project_users.project_id,project_users.user_id,project_users.created_at,project_users.updated_at)
 values
