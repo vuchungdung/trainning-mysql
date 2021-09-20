@@ -70,16 +70,16 @@ inner join companies on projects.company_id = companies.id
 where companies.company_name = "monstar-lab";
 
 -- viết lệnh sql lấy ra danh sách các công ty có project có project_spend > 100
-select distinct companies.*
+select companies.*
 from companies
 inner join projects on companies.id = projects.company_id
-where projected_spend > 100;
+where projected_spend > 100 group by companies.id;
 
 -- viết lệnh sql để lấy ra thông tin của user  tham gia vào projects
-select distinct users.* 
+select users.* 
 from users
 inner join project_users on users.id = project_users.user_id
-inner join projects on project_users.project_id = projects.id;
+inner join projects on project_users.project_id = projects.id group by users.id;
 
 -- lấy ra danh sách project mà có số lượng user tham gia > 2 , sắp xếp số lượng user tham gia tăng dần
 select projects.*,count(users.id) as count_users 
